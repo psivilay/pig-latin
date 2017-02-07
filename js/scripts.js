@@ -1,10 +1,10 @@
 //business logic back end
 
-var numbers = ["0","1","2","3","4","5","6","7","8","9"]
-
 var pigLatin = function(userInput) {
-  if (userInput / 1 === userInput) {
-    return userInput;
+  if (isNaN(userInput) === false) {
+    return userInput
+  } else if (userInput.includes("i")) {
+    return userInput + "ay"
   }
 };
 
@@ -13,7 +13,7 @@ var pigLatin = function(userInput) {
 $(document).ready(function() {
   $("form#pig-latin").submit(function(event) {
     event.preventDefault();
-    var userInput = parseInt($("input#word").val());
+    var userInput = $("input#word").val();
 
     var result = pigLatin(userInput);
 
